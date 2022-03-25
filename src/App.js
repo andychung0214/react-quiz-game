@@ -3,7 +3,7 @@ import './App.css';
 
 import Home from "./Pages/Home";
 import { BrowserRouter , Routes, Route} from "react-router-dom";
-import useState  from 'react-usestateref';
+import useState from 'react-usestateref';
 
 import Result from './Pages/Result';
 import Quiz from './Pages/Quiz';
@@ -31,7 +31,6 @@ function App() {
 
   // fetchQuestions();
 
-
   const fetchQuestions = (category = "") =>{
     let apiUrl =
       `https://opentdb.com/api.php?amount=10${category && `&category=${category}`}&type=boolean`;
@@ -50,7 +49,6 @@ function App() {
 
     }
   }
-  
 
   return (
     <BrowserRouter>
@@ -65,8 +63,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-
 }
-
 
 export default App;
