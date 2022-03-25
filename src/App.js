@@ -55,9 +55,9 @@ function App() {
       <div className="app">
 
         <Routes>
-          <Route path="/" index element={<Home name={name} setName={setName} fetchQuestions={fetchQuestions} />} />
-          <Route path="quiz" element={<Quiz name={name} questions={questions} score={score} setScore={setScore} setQuestions={setQuestions} />} />
-          <Route path="result" element={<Result name={name} score={score} />} />
+          <Route path="/react-quiz-game" index element={<Home name={name} setName={setName} fetchQuestions={fetchQuestions} />} />
+          <Route path="/react-quiz-game/quiz" element={<Quiz name={name} questions={questions} score={score} setScore={setScore} setQuestions={setQuestions} />} />
+          <Route path="/react-quiz-game/result" element={<Result name={name} score={score} />} />
           {/* <Route path="*" element={<NoMatch />} /> */}
         </Routes>
       </div>
