@@ -11,13 +11,13 @@ const Result = ({name, score}) => {
     }
   }, [name, nav])
   return (
-    <div className='rsult'>
+    <div className='result'>
       <span className="title">Final Score: {score}</span>
       <button variant="contained"
         color="secondary"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}
-        href="/react-quiz-game">Back To Quiz Home Page</button>
+        onClick={() => nav("/react-quiz-game")}>Back To Quiz Home Page</button>
     </div>
   )
 }
