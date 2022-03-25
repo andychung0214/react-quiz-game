@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import { Navigate, useNavigate, useLocation, BrowserRouter , Routes, Route, Outlet, Link } from "react-router-dom";
+import React, { useRef } from 'react';
+import { useNavigate, useLocation} from "react-router-dom";
 
 import useState  from 'react-usestateref';
-import { Form, Button, Dropdown } from 'react-bootstrap';
+import { Form, Button} from 'react-bootstrap';
 import Categories from '../Components/Categories';
 import ErrorMessage from '../Components/ErrorMessage';
 
@@ -17,7 +17,6 @@ const Home = ({name, setName, fetchQuestions}) => {
   const [error, setError] = useState(false);
 
   let navigate = useNavigate();
-  let location = useLocation();
 
   const selectCategoryRef = useRef(null);
   const inputNameRef = useRef(null);
@@ -44,8 +43,8 @@ const Home = ({name, setName, fetchQuestions}) => {
         </Row>
         <Row>
           <Col>
-          {/* {error && <ErrorMessage>Please Fill all the feilds</ErrorMessage>} */}
-            {/* {error && <ErrorMessage>Please Fill all the field</ErrorMessage>} */}
+          <span style={{ fontSize: 30 }}>Quiz Settings</span>
+          {error && <ErrorMessage>Please Fill all the feilds</ErrorMessage>}
             <Form>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>請填入姓名</Form.Label>
@@ -62,7 +61,6 @@ const Home = ({name, setName, fetchQuestions}) => {
           <Form.Control type="text" placeholder="Select Your category" /> */}
 
                 <Form.Label>請選題目分類</Form.Label>
-
                 <Form.Control
                   as="select"
                   style={{ width: 'auto', display: 'inline' }}
@@ -76,7 +74,6 @@ const Home = ({name, setName, fetchQuestions}) => {
                     <option
                       key={cat.value}
                       value={cat.value}
-                      ref={selectCategoryRef}
                     >
                       {cat.category}
                     </option>

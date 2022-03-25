@@ -24,16 +24,12 @@ const Quiz = ({name, questions, score, setScore, setQuestions}) => {
   }, [currQues, questions])
 
 
-
   const handleShuffle = (optionss) =>{
     return optionss.sort();
   }
   
   return (
     <>
-
-      {questions ?
-
         <Container>
           <Row>
             <Col>
@@ -42,8 +38,9 @@ const Quiz = ({name, questions, score, setScore, setQuestions}) => {
           </Row>
           <Row>
             <Col>
-              <div>
-                <span>Welcome,  {name}</span>
+              <div className="quiz">
+                <span className="subtitle">Welcome, {name}</span>
+                {questions ?
                 <div className='quizInfo'>
                   <span>{questions[currQues].category}</span>
                   <span>Score: {score}</span>
@@ -59,6 +56,9 @@ const Quiz = ({name, questions, score, setScore, setQuestions}) => {
                   />
 
                 </div>
+                :
+                <Spinner animation="border" variant="success" />
+              }
               </div>
 
             </Col>
@@ -69,10 +69,6 @@ const Quiz = ({name, questions, score, setScore, setQuestions}) => {
             </Col>
           </Row>
         </Container>
-        :
-        <Spinner animation="border" variant="success" />
-      }
-
     </>
   );
 }

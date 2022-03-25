@@ -1,21 +1,23 @@
 import React, {useEffect} from 'react';
-import useState  from 'react-usestateref';
-import { Link, withRouter, useHistory, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import './Result.css'
 
 const Result = ({name, score}) => {
   let nav = useNavigate();
 
-
   useEffect(() => {
     if (!name) {
-      nav('/testquiz');
+      nav('/');
     }
   }, [name, nav])
   return (
     <div className='rsult'>
-      <span>Final Score: {score}</span>
-      <button href="/testquiz">Back To Quiz Home Page</button>
+      <span className="title">Final Score: {score}</span>
+      <button variant="contained"
+        color="secondary"
+        size="large"
+        style={{ alignSelf: "center", marginTop: 20 }}
+        href="/">Back To Quiz Home Page</button>
     </div>
   )
 }
