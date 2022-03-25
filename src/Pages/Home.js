@@ -29,7 +29,7 @@ const Home = ({name, setName, fetchQuestions}) => {
     } else {
       setError(false);
       fetchQuestions(categoryName);
-      navigate("/quiz");
+      navigate("/react-quiz-game/quiz");
     }
 
   };

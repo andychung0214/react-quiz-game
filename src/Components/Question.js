@@ -37,7 +37,7 @@ const Question = ({currQues,
 
     const handleNext = () =>{
         if (currQues > 8) {
-            navigate("/result");
+            navigate("/react-quiz-game/result");
           } else if (selected) {
             setCurrQues(currQues + 1);
             setSelected();
@@ -47,7 +47,7 @@ const Question = ({currQues,
     const handleQuit = () =>{
         setCurrQues(0);
         setQuestions();
-        navigate('/');
+        navigate('/react-quiz-game');
     }
 
     const handleAnswer = (selectAnswer) =>{

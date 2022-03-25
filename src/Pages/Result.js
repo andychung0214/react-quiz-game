@@ -7,7 +7,7 @@ const Result = ({name, score}) => {
 
   useEffect(() => {
     if (!name) {
-      nav('/');
+      nav('/react-quiz-game');
     }
   }, [name, nav])
   return (
@@ -17,7 +17,7 @@ const Result = ({name, score}) => {
         color="secondary"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}
-        href="/">Back To Quiz Home Page</button>
+        href="/react-quiz-game">Back To Quiz Home Page</button>
     </div>
   )
 }
